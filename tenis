@@ -1,0 +1,35 @@
+def main():
+    juegosA = int(input("Ingrese el número de juegos ganados por el jugador A: "))
+    juegosB = int(input("Ingrese el número de juegos ganados por el jugador B: "))
+    
+    if juegosB >= 0 and juegosA >= 0:
+        if juegosA <= 7 and juegosB <= 7:
+            if juegosA == 7 and juegosB == 7:
+                print("Resultado no válido")
+            elif juegosA == 7 or juegosB == 7:
+                if juegosA < 5 or juegosB < 5:
+                    print("Resultado no válido")
+                elif juegosB == 7:
+                    print("El jugador B ganó el set.")
+                else:
+                    print("El jugador A ganó el set.")
+            else:
+                if juegosA >= 6 and juegosA - juegosB >= 2:
+                    print("El jugador A ganó el set.")
+                elif juegosB >= 6 and juegosB - juegosA >= 2:
+                    print("El jugador B ganó el set.")
+                elif juegosA == 7 and juegosB == 6:
+                    print("El jugador A ganó el set.")
+                elif juegosB == juegosA or abs(juegosB - juegosA) < 2:
+                    print("El set todavía no termina.")
+                elif juegosB == 7 and juegosA == 6:
+                    print("El jugador B ganó el set.")
+                else:
+                    print("El resultado es inválido.")
+        else:
+            print("Resultado inválido")
+    else:
+        print("Resultado inválido")
+
+if __name__ == "__main__":
+    main()
