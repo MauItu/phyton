@@ -1,0 +1,22 @@
+print("Ingrese la estatura en metros: ")
+M = float(input())
+
+print("Ingrese su peso en kilogramos: ")
+W = float(input())
+
+print("Ingrese su edad: ")
+E = int(input())
+
+imc = W / (M * M)
+
+if imc < 18.5:
+    condicionRiesgo = "De acuerdo a los datos ingresados, esta bajo de peso"
+elif imc < 25:
+    condicionRiesgo = "De acuerdo a los datos ingresados, posee un peso normal"
+elif imc < 30:
+    condicionRiesgo = "De acuerdo a los datos ingresados,usted tiene sobrepeso"
+else:
+    condicionRiesgo = "De acuerdo a los datos ingresados, usted tiene obesidad"
+
+print("Su índice de masa corporal (IMC) es:", imc)
+print("Su condición de riesgo es:", condicionRiesgo)
